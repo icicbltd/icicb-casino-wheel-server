@@ -29,8 +29,6 @@ module.exports = {
     MainStart: async (req, res) => {
         try {
             const { token, betAmount } = req.body;
-
-            console.log(betAmount);
             try {
                 await axios.post(
                     process.env.PLATFORM_SERVER + "api/games/bet",
@@ -61,7 +59,6 @@ module.exports = {
                 throw new Error("2");
             }
             try {
-                console.log("randomangle: ", user.r_angle, "winamount: ", user.winAmount);
                 res.json({
                     Angle: user.R_angle,
                     WinMoney: user.winAmount,
